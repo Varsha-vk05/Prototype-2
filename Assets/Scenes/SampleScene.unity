@@ -347,11 +347,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1525468335}
   m_SourcePrefab: {fileID: 100100000, guid: d0a9bfb4b5f28174884e89dd76563ae8, type: 3}
---- !u!33 &538654455 stripped
-MeshFilter:
-  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: d0a9bfb4b5f28174884e89dd76563ae8, type: 3}
-  m_PrefabInstance: {fileID: 538654454}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,13 +595,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871500952}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 947a86483bdb33a459cf8437a3d55b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelYouWantToChange: {fileID: 538654455}
-  modelYouWantToUse: {fileID: 4698152120088058464, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+  modelYouWantToChange: {fileID: 0}
+  modelYouWantToUse: {fileID: 0}
 --- !u!4 &871500954
 Transform:
   m_ObjectHideFlags: 0
