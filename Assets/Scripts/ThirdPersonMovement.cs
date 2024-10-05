@@ -20,7 +20,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private bool _groundedPlayer;
 
     [SerializeField]
-    private float _jumpHeight = 1.0f;
+    private float _jumpHeight = 5.0f;
     [SerializeField]
     private float _gravityValue = -9.81f;
 
