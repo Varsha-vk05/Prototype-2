@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ShapeShiftTrigger : MonoBehaviour
 {
     public float shapeshiftRange = 5f;           // Distance within which you can shapeshift
@@ -69,7 +70,7 @@ public class ShapeShiftTrigger : MonoBehaviour
         }
     }
 
-    void Shapeshift(GameObject npc)
+    public void Shapeshift(GameObject npc)
     {
         SkinnedMeshRenderer npcMeshRenderer = npc.GetComponentInChildren<SkinnedMeshRenderer>();
 
