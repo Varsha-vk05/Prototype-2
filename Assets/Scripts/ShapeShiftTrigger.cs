@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class ShapeShiftTrigger : MonoBehaviour
@@ -22,6 +23,8 @@ public class ShapeShiftTrigger : MonoBehaviour
     private SkinnedMeshRenderer playerMeshRenderer;
     private Animator playerAnimator;
 
+    public Slider staminaBar;                 //UI slider to display stamina bar
+
     void Start()
     {
         // Store the player's original mesh, materials, and AnimatorController
@@ -32,6 +35,13 @@ public class ShapeShiftTrigger : MonoBehaviour
         originalMaterials = playerMeshRenderer.materials;
         originalAnimatorController = playerAnimator.runtimeAnimatorController;
         originalAvatar = playerAnimator.avatar;
+
+        //To initialize the stamina bar with the maximun value and the current value
+        if (staminaBar != null)
+        {
+            staminaBar.maxValue = shapeshiftDuration;
+            staminaBar.value = shapeshiftDuration;
+        }
     }
 
     void Update()
@@ -52,6 +62,11 @@ public class ShapeShiftTrigger : MonoBehaviour
         if (isShapeshifted)
         {
             shapeshiftTimer -= Time.deltaTime;
+
+            if (staminaBar != null)
+            {
+                staminaBar.value = shapeshiftTimer;      //this will update the stamina bar as the timer will decrease
+            }
 
             // Automatically revert when the timer runs out
             if (shapeshiftTimer <= 0)
