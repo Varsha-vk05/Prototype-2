@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static ShapeShiftTrigger;
+
 public class Navagation : MonoBehaviour
 {
     public NavMeshAgent agent;
@@ -9,6 +11,13 @@ public class Navagation : MonoBehaviour
 
     public Transform centrePoint; //centre of the area the agent wants to move around in
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
+    public Transform player; //player reference 
+
+    public LayerMask Player; 
+
+    public float sightRange;
+
+    public bool playerInSightRange;
 
     void Start()
     {
@@ -18,6 +27,8 @@ public class Navagation : MonoBehaviour
 
     void Update()
     {
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, Player);
+
         if (agent.remainingDistance <= agent.stoppingDistance) //done with path
         {
             Vector3 point;
@@ -28,6 +39,10 @@ public class Navagation : MonoBehaviour
             }
         }
 
+        if (playerInSightRange)
+        {
+            ChasePlayer();
+        }
     }
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
@@ -44,6 +59,15 @@ public class Navagation : MonoBehaviour
 
         result = Vector3.zero;
         return false;
+    }
+        private void ChasePlayer()
+        {
+            agent.SetDestination(player.position);
+        }
+
+    private void blind(ShapeShiftTrigger hasShifted)
+    {
+        
     }
 
 }
