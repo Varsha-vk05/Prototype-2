@@ -146,6 +146,15 @@ The prototype will aim to answer the following question:
 
 --- 
 
+
+9. Resources
+
+This section lists all external assets, tools, or references that were not created by the team and have been used in the development of "Android Escape."
+
+-**Unity Assets**
+[Asset Link](https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-construction-kit-modular-159280)
+
+----
    
 
 ## 10. Conclusion 
