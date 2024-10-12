@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static ShapeShiftTrigger;
 
 public class Navagation : MonoBehaviour
 {
@@ -65,9 +64,6 @@ public class Navagation : MonoBehaviour
             agent.SetDestination(player.position);
         }
 
-    private void blind(ShapeShiftTrigger hasShifted)
-    {
-        
-    }
+    
 
 }

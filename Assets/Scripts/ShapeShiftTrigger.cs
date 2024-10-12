@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class ShapeShiftTrigger : MonoBehaviour
 {
+
+    public LayerMask Player;
+
     public float shapeshiftRange = 5f;           // Distance within which you can shapeshift
     public LayerMask NPC;                   // Layer for NPCs
     public float shapeshiftDuration = 10f;       // Time in seconds for how long the player stays shapeshifted
@@ -61,6 +64,7 @@ public class ShapeShiftTrigger : MonoBehaviour
         // Handle shapeshift timer
         if (isShapeshifted)
         {
+            gameObject.layer = 8; 
             shapeshiftTimer -= Time.deltaTime;
 
             if (staminaBar != null)
@@ -72,6 +76,7 @@ public class ShapeShiftTrigger : MonoBehaviour
             if (shapeshiftTimer <= 0)
             {
                 RevertToOriginalForm();
+                gameObject.layer = 7;
             }
         }
     }
